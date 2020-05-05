@@ -3,15 +3,21 @@
     
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $deletegameid = $_POST["deletegameid"];
+        if($deletegameid != null){
+            deleteCharacter($deletegameid);
+        }
         $gameid = $_POST['gameid'];
         $time = $_POST['time'];
+        if($time == null){
+            $time = "00:00";
+        }
         $host = $_POST['host'];
         $players = $_POST['players'];
-
         $update =  Addall($gameid, $time, $host, $players);
-    
     }
     $result = AllGames();
+   
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +36,8 @@
            <input type="hidden" value=<?php $games['id'] ?> name="id">
            <input type="submit" value="UPDATE A GAME" name="id" id="update">
         </form>
+
+    
     <?php
     foreach($result as $games){ 
     ?>
@@ -37,9 +45,11 @@
 
        <img src="afbeeldingen/<?= $games['image'] ?>">
 
-      
 
-       <button href="" id="delete"> DELETE</button>  
+       <form action="delete.php" method="post">
+           <input type="hidden" value=<?php echo $games['id'] ?> name="deleteid">
+           <input type="submit" value="DELETE" name="id" id="delete">
+        </form>
 
        </div> 
 
@@ -58,6 +68,6 @@
 ?>
         
 
-<footer></footer>
+<footer id="berkan"> @Berkan Kaya - 2020</footer>
 </body>
 </html>

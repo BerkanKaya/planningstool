@@ -47,7 +47,8 @@ a{
 }
 #update{
     position: relative;
-    bottom: 50px;
+    left: 160px;
+    bottom: 43px;
     background-color: black;
     color: white; 
 }
@@ -64,4 +65,130 @@ a{
 #dump{
     position: relative;
     left: 650px;
+}
+#no{
+    position: relative;
+    left: 200px;
+    bottom: 22px;
+}
+
+
+a:hover{
+    color: black;
+}
+
+a:active{
+    color: red;
+}
+
+#container{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px 20px;
+}
+#footer1{
+    background-color: white;
+    width: 1240px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 10px 0px;
+}
+#berkan{
+    position: relative;
+    bottom: 50px;
+    background-color: white;
+    padding: 10px 0px;
+    width: 1380px;
+}
+header {
+    position: relative;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 20px;
+    height: 20px;
+    background-color: black;
+}
+
+h1 {
+    margin: 0;
+}
+
+.item{
+    border-bottom: 1px solid white;
+    padding: 5px;
+    margin: 10px;
+    display: inline-flex;
+    width: 450px;
+}
+
+.item:hover{
+    background-color: white;
+}
+
+.item .left{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.item .left{
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 150px;
+}
+
+.item .right{
+    display: inline-block;
+}
+
+.item .right h2 {
+    padding: 0;
+    margin: 0;
+}
+
+.item:hover .right ul{
+    color: black;
+}
+
+.detail {
+    position: relative;
+}
+header .backbutton {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.detail .left .right {
+    display: inline-block;
+}
+.detail .left{
+    width: 300px;
+    margin-right: 20px;
+    float: left;
+}
+
+.detail .right{
+    width: 630px;
+}
+
+.detail{
+    border: 2px solid black;
+}
+
+.detail .stats{
+    list-style: none;
+    padding: 0;
+    padding-left: 20px;
+}
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#balk{
+    width: 230px;
+    height: 100px;
+    border: 2px solid black;
 }

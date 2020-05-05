@@ -1,5 +1,6 @@
 <?php
   function DatabaseConnect(){
+    $id = $_GET['id'];
     $servername = "localhost";
     $username = "root";
     $password = "mysql";
@@ -14,13 +15,6 @@
     catch (PDOException $e){
         echo "connection failed" . $e->getMessage();
     }
-}
-function planning(){
-    $conn = DatabaseConnect();
-    $query = $conn->prepare('SELECT * FROM planning');
-    $query->execute();
-    $conn = null;
-    return $query->fetchAll();
 }
 
 function conn($id){
@@ -40,13 +34,7 @@ function AllGames(){
     return $query->fetchAll();
 }
 
-function games(){
-    $conn = DatabaseConnect();
-    $query = $conn->prepare('SELECT * FROM game WHERE id=gameid');
-    $query->execute();
-    $conn = null;
-    return $query->fetchAll();
-}
+
 function Addall($gameid, $time, $host, $players){
     $conn = DatabaseConnect();
     $query = $conn->prepare('UPDATE `games` SET `time` = :time, `host` = :host, `players` = :players WHERE `games`.`id` = :id; ');
@@ -54,6 +42,15 @@ function Addall($gameid, $time, $host, $players){
     $query->bindParam(":time", $time);
     $query->bindParam(":host", $host);
     $query->bindParam(":players", $players);
+    $query->execute();
+    $conn = null;
+    return $query->errorCode(); 
+}
+
+function deleteCharacter($gameid){
+    $conn = DatabaseConnect();
+    $query = $conn->prepare('UPDATE `games` SET `host` = null, `players` = null, `time` = "00:00" WHERE id=:id');
+    $query->bindParam(":id", $gameid);
     $query->execute();
     $conn = null;
 }
