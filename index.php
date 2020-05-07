@@ -29,9 +29,11 @@
     <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
+    
     <header>
         <h1>Games</h1>
     </header>
+
     <form action="update.php" method="get">
            <input type="hidden" value=<?php $games['id'] ?> name="id">
            <input type="submit" value="UPDATE A GAME" name="id" id="update">
@@ -68,6 +70,6 @@
 ?>
         
 
-<footer id="berkan"> @Berkan Kaya - 2020</footer>
+<footer id="berkan"> &copy;Berkan Kaya - 2020</footer>
 </body>
 </html>

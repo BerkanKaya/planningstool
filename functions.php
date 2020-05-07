@@ -1,6 +1,6 @@
 <?php
   function DatabaseConnect(){
-    $id = $_GET['id'];
+
     $servername = "localhost";
     $username = "root";
     $password = "mysql";
